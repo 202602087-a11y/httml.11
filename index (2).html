@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A student-friendly newsroom about the 2026 global and Korean semiconductor industry outlook.">
+  <title>Semiconductor Newsroom | 2026 Global & Korean Outlook</title>
+  <style>
+    :root {
+      --navy: #102846;
+      --blue: #2463a6;
+      --teal: #008f95;
+      --ink: #1d2937;
+      --muted: #526274;
+      --paper: #f4f7fb;
+      --card: #ffffff;
+      --line: #dce5ef;
+      --past: #18794e;
+      --future: #8a5a00;
+      --survey: #5b4bb7;
+      --shadow: 0 8px 24px rgba(16,40,70,.08);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+    }
+    a { color: var(--blue); overflow-wrap: anywhere; }
+    a:focus-visible, button:focus-visible {
+      outline: 3px solid #f0b429;
+      outline-offset: 3px;
+    }
+    .hero {
+      color: #fff;
+      padding: 46px 20px 42px;
+      background: linear-gradient(125deg, #102846 0%, #174d7c 58%, #008f95 100%);
+    }
+    .hero-inner, main, footer { width: min(1100px, calc(100% - 32px)); margin: 0 auto; }
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      font-weight: 700;
+      font-size: .78rem;
+      color: #a8f0ec;
+      margin: 0 0 10px;
+    }
+    h1 { font-size: clamp(2rem, 5vw, 3.45rem); line-height: 1.08; margin: 0 0 16px; }
+    .subtitle { max-width: 760px; font-size: 1.12rem; margin: 0 0 22px; color: #e7f3ff; }
+    .metadata { display: flex; flex-wrap: wrap; gap: 10px; }
+    .meta-pill { border: 1px solid rgba(255,255,255,.38); border-radius: 999px; padding: 6px 12px; font-size: .9rem; }
+    main { padding: 28px 0 48px; }
+    section { margin: 0 0 26px; }
+    .section-heading { color: var(--navy); font-size: clamp(1.4rem, 3vw, 1.9rem); margin: 0 0 8px; line-height: 1.2; }
+    .section-intro { color: var(--muted); margin: 0 0 16px; }
+    .grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 16px; }
+    .fact-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 16px; }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 20px;
+      box-shadow: var(--shadow);
+      min-width: 0;
+    }
+    .fact-number { font-size: .8rem; font-weight: 800; letter-spacing: .08em; color: var(--teal); text-transform: uppercase; }
+    .card h3 { color: var(--navy); margin: 7px 0 10px; font-size: 1.15rem; line-height: 1.35; }
+    .card p { margin: 7px 0; }
+    .ko { border-top: 1px dashed var(--line); padding-top: 9px; margin-top: 10px !important; color: #47576a; }
+    .lang-label { display: inline-block; font-size: .72rem; font-weight: 800; color: var(--teal); letter-spacing: .06em; margin-right: 5px; }
+    .badge {
+      display: inline-block; font-size: .75rem; font-weight: 800; border-radius: 6px;
+      padding: 3px 8px; margin-bottom: 5px;
+    }
+    .reported { background: #e3f5eb; color: var(--past); }
+    .forecast { background: #fff1d6; color: var(--future); }
+    .survey { background: #eeeaff; color: var(--survey); }
+    .notice {
+      border-left: 5px solid var(--teal);
+      padding: 14px 16px;
+      background: #e9f7f7;
+      border-radius: 8px;
+      margin-top: 16px;
+    }
+    button {
+      border: 0; border-radius: 10px; background: var(--navy); color: #fff;
+      font: inherit; font-weight: 700; padding: 12px 18px; cursor: pointer;
+    }
+    button:hover { background: #1d4f7b; }
+    .definitions { display: none; margin-top: 16px; }
+    .definitions.open { display: block; }
+    .term { border-left: 4px solid var(--teal); }
+    .outlook-card h3 { margin-top: 0; }
+    .sources ol { padding-left: 23px; }
+    .sources li { margin: 0 0 16px; padding-left: 4px; }
+    .source-date { color: var(--muted); font-size: .9rem; }
+    footer { border-top: 1px solid var(--line); padding: 22px 0 34px; color: var(--muted); font-size: .9rem; }
+    .small-note { color: var(--muted); font-size: .9rem; }
+    @media (max-width: 700px) {
+      .hero { padding: 34px 0 30px; }
+      .hero-inner, main, footer { width: min(100% - 24px, 1100px); }
+      .grid, .fact-grid { grid-template-columns: 1fr; }
+      .card { padding: 17px; }
+      .meta-pill { font-size: .82rem; }
+    }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-inner">
+      <p class="eyebrow">Student Semiconductor Newsroom</p>
+      <h1>2026 Global &amp; Korean Semiconductor Outlook</h1>
+      <p class="subtitle">AI chips are changing the semiconductor industry. Learn what is happening around the world and why it matters to South Korea.</p>
+      <div class="metadata" aria-label="Article information">
+        <span class="meta-pill"><strong>Creator:</strong> Samir Tamang</span>
+        <span class="meta-pill"><strong>Verified:</strong> October 14, 2026</span>
+        <span class="meta-pill"><strong>Reading time:</strong> 5 minutes</span>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section aria-labelledby="intro-title">
+      <h2 class="section-heading" id="intro-title">The big picture</h2>
+      <p>Semiconductors are tiny electronic components inside computers, phones, cars, and many other devices. In 2026, demand for AI computing is a major force in the industry. AI systems need powerful processors and fast memory. South Korea is important because its companies make advanced memory chips, including high-bandwidth memory (HBM).</p>
+      <p class="ko"><span class="lang-label">한국어</span>반도체는 컴퓨터, 휴대전화, 자동차 등 여러 기기에 들어가는 작은 전자 부품입니다. 2026년에는 AI 연산 수요가 반도체 산업을 크게 이끌고 있습니다. AI 시스템에는 강력한 프로세서와 빠른 메모리가 필요합니다. 한국 기업은 HBM을 포함한 첨단 메모리 반도체를 생산하기 때문에 중요한 역할을 합니다.</p>
+    </section>
+
+    <section aria-labelledby="facts-title">
+      <h2 class="section-heading" id="facts-title">Five key facts</h2>
+      <p class="section-intro">Read the label on each fact. Reported results describe what happened. Forecasts estimate what may happen. Survey findings describe what people said.</p>
+      <div class="fact-grid">
+        <article class="card">
+          <span class="badge forecast">Future projection</span>
+          <div class="fact-number">Fact 01</div>
+          <h3>Global market forecast: $1.51 trillion</h3>
+          <p>WSTS’s Spring 2026 forecast projected that the global semiconductor market would reach about <strong>$1.51 trillion in 2026</strong>, with year-over-year growth of 89.9%.</p>
+          <p class="ko"><span class="lang-label">한국어</span>WSTS의 2026년 봄 전망은 세계 반도체 시장이 2026년에 약 1조 5,100억 달러에 도달하고 전년 대비 89.9% 성장할 것으로 예상했습니다.</p>
+          <p class="small-note">This is a forecast, not a final 2026 result.</p>
+        </article>
+
+        <article class="card">
+          <span class="badge forecast">Future projection</span>
+          <div class="fact-number">Fact 02</div>
+          <h3>Memory growth could be exceptional</h3>
+          <p>The same WSTS forecast projected memory-market growth of about <strong>250%</strong>, reaching roughly <strong>$803.9 billion</strong> in 2026.</p>
+          <p class="ko"><span class="lang-label">한국어</span>같은 WSTS 전망은 2026년 메모리 시장이 약 250% 성장해 약 8,039억 달러에 이를 것으로 예상했습니다.</p>
+          <p class="small-note">The figure is from the original Spring 2026 forecast.</p>
+        </article>
+
+        <article class="card">
+          <span class="badge forecast">Future projection</span>
+          <div class="fact-number">Fact 03</div>
+          <h3>Logic chips also matter</h3>
+          <p>WSTS projected that the logic segment would grow by <strong>37.3%</strong> in 2026, reaching about <strong>$411.4 billion</strong>. Logic chips include processors used for computing tasks.</p>
+          <p class="ko"><span class="lang-label">한국어</span>WSTS는 2026년 로직 반도체 시장이 37.3% 성장해 약 4,114억 달러에 이를 것으로 전망했습니다. 로직 반도체에는 연산에 사용되는 프로세서가 포함됩니다.</p>
+        </article>
+
+        <article class="card">
+          <span class="badge reported">Reported result</span>
+          <div class="fact-number">Fact 04</div>
+          <h3>Korea reported record monthly chip exports</h3>
+          <p>South Korea’s September 2026 semiconductor exports were reported at <strong>$60.30 billion</strong>, up <strong>262.8%</strong> from September 2025, according to the government’s trade release dated October 1, 2026.</p>
+          <p class="ko"><span class="lang-label">한국어</span>2026년 10월 1일 발표된 정부 무역 자료에 따르면, 한국의 2026년 9월 반도체 수출액은 603억 달러였으며 전년 동월보다 262.8% 증가했습니다.</p>
+          <p class="small-note">This is a reported monthly result, not a forecast.</p>
+        </article>
+
+        <article class="card">
+          <span class="badge survey">Survey finding</span>
+          <div class="fact-number">Fact 05</div>
+          <h3>Executives see AI as a major revenue driver</h3>
+          <p>In a survey of 151 semiconductor executives, <strong>73%</strong> identified AI as the most important revenue driver. This records executives’ views. It does not mean AI generated 73% of all industry revenue.</p>
+          <p class="ko"><span class="lang-label">한국어</span>반도체 업계 경영진 151명을 대상으로 한 설문조사에서 73%가 AI를 가장 중요한 매출 동력으로 꼽았습니다. 이는 경영진의 의견이며, AI가 전체 산업 매출의 73%를 차지한다는 뜻은 아닙니다.</p>
+          <p class="small-note">KPMG’s 2026 outlook was published May 21, 2026; the survey was conducted earlier.</p>
+        </article>
+      </div>
+      <div class="notice">
+        <strong>Important forecast note:</strong> WSTS later published a calculation incorporating actual second-quarter 2026 data. That later estimate differs from the original Spring forecast. Do not mix the two figures without naming the forecast version.
+        <p class="ko"><span class="lang-label">한국어</span>중요: WSTS는 이후 2026년 2분기 실제 데이터를 반영한 계산 결과도 발표했습니다. 이 수치는 기존 봄 전망과 다릅니다. 전망 시점을 밝히지 않고 두 수치를 섞어 사용하지 마세요.</p>
+      </div>
+    </section>
+
+    <section aria-labelledby="terms-title">
+      <h2 class="section-heading" id="terms-title">Four important terms</h2>
+      <p class="section-intro">New to semiconductors? Open the definitions when you need them.</p>
+      <button id="terms-toggle" type="button" aria-expanded="false" aria-controls="term-definitions">View Term Definitions</button>
+      <div class="definitions" id="term-definitions">
+        <div class="grid">
+          <article class="card term">
+            <h3>1. Semiconductor</h3>
+            <p>A material used to control electrical current. Semiconductor chips are the building blocks of many electronic devices.</p>
+            <p class="ko"><span class="lang-label">한국어</span>반도체는 전류를 조절하는 데 사용되는 물질입니다. 반도체 칩은 많은 전자 기기의 기본 부품입니다.</p>
+          </article>
+          <article class="card term">
+            <h3>2. AI semiconductor</h3>
+            <p>A chip designed to handle AI calculations quickly. GPUs and AI accelerators are common examples.</p>
+            <p class="ko"><span class="lang-label">한국어</span>AI 반도체는 AI 계산을 빠르게 처리하도록 설계된 칩입니다. GPU와 AI 가속기가 대표적인 예입니다.</p>
+          </article>
+          <article class="card term">
+            <h3>3. Memory semiconductor</h3>
+            <p>A chip that stores data. DRAM is often used as working memory, while NAND flash stores data even when power is off.</p>
+            <p class="ko"><span class="lang-label">한국어</span>메모리 반도체는 데이터를 저장하는 칩입니다. DRAM은 주로 작업용 메모리로 사용되고, NAND 플래시는 전원이 꺼져도 데이터를 저장합니다.</p>
+          </article>
+          <article class="card term">
+            <h3>4. HBM (High-Bandwidth Memory)</h3>
+            <p>A type of memory designed to move large amounts of data very quickly. It is important for many AI accelerators.</p>
+            <p class="ko"><span class="lang-label">한국어</span>HBM은 많은 데이터를 매우 빠르게 전송하도록 설계된 메모리입니다. 여러 AI 가속기에 중요한 역할을 합니다.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section aria-labelledby="outlook-title">
+      <h2 class="section-heading" id="outlook-title">Future outlook: opportunity and uncertainty</h2>
+      <div class="grid">
+        <article class="card outlook-card">
+          <h3>Why growth may continue</h3>
+          <p>AI data centers need more computing power and high-speed memory. This can support demand for AI accelerators, HBM, and other advanced chips. Korea may benefit because it is a major memory-chip supplier.</p>
+          <p class="ko"><span class="lang-label">한국어</span>AI 데이터센터에는 더 많은 연산 능력과 고속 메모리가 필요합니다. 이는 AI 가속기, HBM 및 기타 첨단 칩의 수요를 뒷받침할 수 있습니다. 한국은 주요 메모리 반도체 공급국이므로 혜택을 받을 수 있습니다.</p>
+        </article>
+        <article class="card outlook-card">
+          <h3>What could slow the industry</h3>
+          <p>Memory prices can rise and fall. Trade restrictions and geopolitical tensions may affect supply chains. Chip factories also need large investments, skilled workers, water, and reliable electricity.</p>
+          <p class="ko"><span class="lang-label">한국어</span>메모리 가격은 오르거나 내릴 수 있습니다. 무역 규제와 지정학적 긴장은 공급망에 영향을 줄 수 있습니다. 반도체 공장에는 대규모 투자, 숙련된 인력, 물, 안정적인 전력이 필요합니다.</p>
+        </article>
+      </div>
+      <div class="notice">
+        <strong>Outlook in one sentence:</strong> The industry outlook is positive because of AI demand, but forecasts can change and the final 2026 results are not yet complete.
+        <p class="ko"><span class="lang-label">한국어</span>한 문장으로 정리하면, AI 수요로 산업 전망은 긍정적이지만 전망치는 바뀔 수 있으며 2026년 최종 실적은 아직 확정되지 않았습니다.</p>
+      </div>
+    </section>
+
+    <section class="sources" aria-labelledby="sources-title">
+      <h2 class="section-heading" id="sources-title">Sources and publication dates</h2>
+      <p class="section-intro">Use the original sources to check figures and read more detail.</p>
+      <ol>
+        <li>
+          <strong>World Semiconductor Trade Statistics (WSTS)</strong> — “Global Semiconductor Market Surges Beyond USD 1.5 Trillion in 2026.”<br>
+          <span class="source-date">Published June 2, 2026. Original Spring 2026 market forecast.</span><br>
+          <a href="https://www.wsts.org/76/Recent-News-Release" target="_blank" rel="noopener noreferrer">Open WSTS news release page</a>
+        </li>
+        <li>
+          <strong>WSTS / Taiwan Semiconductor Industry Association</strong> — later outlook calculation incorporating actual Q2 2026 data.<br>
+          <span class="source-date">Later 2026 update; use this separately from the original Spring forecast.</span><br>
+          <a href="https://wsts.tsia.org.tw/PageDetail.aspx?pageID=1689" target="_blank" rel="noopener noreferrer">Open the updated WSTS outlook</a>
+        </li>
+        <li>
+          <strong>Korea.net / Ministry of Trade, Industry and Resources</strong> — Korea’s September 2026 trade results.<br>
+          <span class="source-date">Published October 1, 2026. Reported export performance.</span><br>
+          <a href="https://www.korea.net/Government/Briefing-Room/Press-Releases/view?articleId=2018869&insttCode=A260129&type=N" target="_blank" rel="noopener noreferrer">Open the Korean government release</a>
+        </li>
+        <li>
+          <strong>KPMG</strong> — “Global Semiconductor Industry Outlook for 2026.”<br>
+          <span class="source-date">Published May 21, 2026. Includes a survey of 151 semiconductor executives.</span><br>
+          <a href="https://kpmg.com/us/en/articles/2026/global-semiconductor-industry-outlook-2026.html" target="_blank" rel="noopener noreferrer">Open the KPMG outlook</a>
+        </li>
+        <li>
+          <strong>KPMG / Global Semiconductor Alliance (GSA)</strong> — full outlook report PDF.<br>
+          <a href="https://kpmg.com/kpmg-us/content/dam/kpmg/pdf/2026/global-semiconductor-industry-outlook-2026.pdf" target="_blank" rel="noopener noreferrer">Open the full report (PDF)</a>
+        </li>
+      </ol>
+      <p class="small-note"><strong>Verification note:</strong> Market figures labelled “forecast” are estimates, not completed annual results. The Korea export figure is a reported monthly result. The 73% figure is a survey finding. The publication dates and source descriptions above follow the research notes supplied for this project.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p><strong>2026 Global &amp; Korean Semiconductor Outlook</strong> · Student newsroom project</p>
+    <p>Creator: Samir Tamang · Material verified: October 14, 2026</p>
+    <p>Educational use. Figures should be checked against the linked original sources before reuse.</p>
+  </footer>
+
+  <script>
+    (function () {
+      const button = document.getElementById('terms-toggle');
+      const panel = document.getElementById('term-definitions');
+      button.addEventListener('click', function () {
+        const isOpen = panel.classList.toggle('open');
+        button.setAttribute('aria-expanded', String(isOpen));
+        button.textContent = isOpen ? 'Hide Term Definitions' : 'View Term Definitions';
+      });
+    }());
+  </script>
+</body>
+</html>
